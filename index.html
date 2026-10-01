@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Birthday Bhondu ♡</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Quicksand:wght@400;500;600;700&display=swap');
+
+    :root {
+      --blue: #79cfff;
+      --blue-dark: #3696ca;
+      --pink: #ffb9d2;
+      --pink-light: #ffeaf2;
+      --yellow: #ffe98a;
+      --cream: #fffdf9;
+      --white: rgba(255, 255, 255, 0.88);
+      --text: #607785;
+      --heading: #368fc2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Quicksand", sans-serif;
+      color: var(--text);
+
+      background:
+        radial-gradient(circle at 8% 12%, rgba(121, 207, 255, 0.27), transparent 25%),
+        radial-gradient(circle at 92% 18%, rgba(255, 185, 210, 0.27), transparent 25%),
+        radial-gradient(circle at 50% 100%, rgba(255, 233, 138, 0.16), transparent 30%),
+        var(--cream);
+    }
+
+    /* =========================
+       BACKGROUND
+       ========================= */
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 125px;
+      height: 42px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: inherit;
+    }
+
+    .cloud::before {
+      width: 50px;
+      height: 50px;
+      left: 18px;
+      bottom: 0;
+    }
+
+    .cloud::after {
+      width: 63px;
+      height: 63px;
+      right: 15px;
+      bottom: 0;
+    }
+
+    .cloud.one {
+      top: 18%;
+      left: -30px;
+      animation: cloudOne 20s linear infinite;
+    }
+
+    .cloud.two {
+      top: 42%;
+      right: -40px;
+      transform: scale(0.78);
+      animation: cloudTwo 24s linear infinite;
+    }
+
+    @keyframes cloudOne {
+      from {
+        transform: translateX(-20px);
+      }
+      to {
+        transform: translateX(calc(100vw + 200px));
+      }
+    }
+
+    @keyframes cloudTwo {
+      from {
+        transform: translateX(20px) scale(0.78);
+      }
+      to {
+        transform: translateX(calc(-100vw - 200px)) scale(0.78);
+      }
+    }
+
+    /* =========================
+       FLOATING DECORATIONS
+       ========================= */
+
+    .float-item {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatUp linear forwards;
+      opacity: 0.55;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(-115vh) rotate(30deg);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       APP / SCREENS
+       ========================= */
+
+    .app {
+      position: relative;
+      z-index: 5;
+
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 22px 16px;
+    }
+
+    .screen {
+      width: 100%;
+      max-width: 540px;
+      display: none;
+      animation: appear 0.6s ease;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* =========================
+       CARD
+       ========================= */
+
+    .card {
+      position: relative;
+      overflow: hidden;
+
+      background: var(--white);
+      border: 1px solid rgba(255,255,255,0.9);
+
+      border-radius: 30px;
+
+      padding: 38px 32px;
+
+      text-align: center;
+
+      box-shadow:
+        0 25px 70px rgba(75, 155, 200, 0.13);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      top: -125px;
+      right: -75px;
+
+      border-radius: 50%;
+
+      background: rgba(121, 207, 255, 0.17);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+
+      width: 175px;
+      height: 175px;
+
+      bottom: -115px;
+      left: -75px;
+
+      border-radius: 50%;
+
+      background: rgba(255, 185, 210, 0.15);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================
+       BUBBLES
+       ========================= */
+
+    .character-wrap {
+      width: 195px;
+      height: 195px;
+
+      margin: 0 auto 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .bubbles {
+      width: 180px;
+      max-width: 100%;
+      max-height: 100%;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 13px 16px rgba(65, 150, 200, 0.15));
+
+      animation: bubblesFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes bubblesFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    /* =========================
+       TEXT
+       ========================= */
+
+    .tiny {
+      font-size: 10px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: 4px;
+
+      color: var(--blue-dark);
+
+      margin-bottom: 14px;
+    }
+
+    h1,
+    h2 {
+      font-family: "Fredoka", sans-serif;
+      font-weight: 500;
+      color: var(--heading);
+    }
+
+    h1 {
+      font-size: clamp(40px, 9vw, 58px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 8vw, 46px);
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      max-width: 430px;
+      margin: 0 auto;
+
+      font-size: 15px;
+      line-height: 1.85;
+
+      color: #718692;
+    }
+
+    .decor {
+      margin: 20px 0;
+
+      color: var(--pink);
+
+      font-size: 20px;
+      letter-spacing: 7px;
+    }
+
+    /* =========================
+       BUTTON
+       ========================= */
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    .btn {
+      border: none;
+
+      padding: 14px 25px;
+
+      border-radius: 999px;
+
+      background: #53afe4;
+
+      color: white;
+
+      font-family: "Quicksand", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 10px 24px rgba(65, 155, 210, 0.22);
+
+      transition: transform 0.2s ease,
+                  box-shadow 0.2s ease,
+                  background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+
+      background: #439fd5;
+
+      box-shadow:
+        0 14px 28px rgba(65, 155, 210, 0.28);
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    /* =========================
+       CAKE
+       ========================= */
+
+    .cake-area {
+      position: relative;
+
+      width: 175px;
+      height: 155px;
+
+      margin: 5px auto 18px;
+    }
+
+    .plate {
+      position: absolute;
+
+      width: 160px;
+      height: 12px;
+
+      left: 7px;
+      bottom: 9px;
+
+      border-radius: 50%;
+
+      background: rgba(80, 130, 155, 0.14);
+    }
+
+    .cake {
+      position: absolute;
+
+      width: 128px;
+      height: 64px;
+
+      left: 24px;
+      bottom: 20px;
+
+      border-radius: 16px 16px 23px 23px;
+
+      background: #87cdf3;
+    }
+
+    .cake::before {
+      content: "";
+
+      position: absolute;
+
+      width: 138px;
+      height: 22px;
+
+      left: -5px;
+      top: -8px;
+
+      border-radius: 50%;
+
+      background: #ffd4e3;
+    }
+
+    .cake::after {
+      content: "♡  ♡  ♡";
+
+      position: absolute;
+
+      left: 27px;
+      top: 28px;
+
+      color: white;
+
+      font-size: 17px;
+      letter-spacing: 4px;
+    }
+
+    .candle {
+      position: absolute;
+
+      width: 10px;
+      height: 38px;
+
+      bottom: 79px;
+
+      border-radius: 5px;
+
+      background: var(--yellow);
+    }
+
+    .candle.one {
+      left: 52px;
+    }
+
+    .candle.two {
+      left: 83px;
+    }
+
+    .candle.three {
+      left: 114px;
+    }
+
+    .flame {
+      position: absolute;
+
+      width: 12px;
+      height: 17px;
+
+      top: -14px;
+      left: -1px;
+
+      border-radius: 50% 50% 45% 45%;
+
+      background: #ffb04d;
+
+      animation: flame 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes flame {
+      from {
+        transform: scale(0.9) rotate(-4deg);
+      }
+
+      to {
+        transform: scale(1.1) rotate(4deg);
+      }
+    }
+
+    /* =========================
+       LETTER
+       ========================= */
+
+    .letter-paper {
+      margin-top: 12px;
+
+      padding: 28px 26px;
+
+      background: #fffdfa;
+
+      border: 1px solid #e8f3f8;
+
+      border-radius: 23px;
+
+      text-align: left;
+
+      box-shadow:
+        0 8px 25px rgba(80, 150, 185, 0.06);
+    }
+
+    .letter-paper p {
+      font-size: 15px;
+
+      line-height: 2;
+
+      margin-bottom: 18px;
+
+      color: #607987;
+    }
+
+    .letter-paper p:last-child {
+      margin-bottom: 0;
+    }
+
+    .letter-opening {
+      font-family: "Fredoka", sans-serif;
+
+      font-size: 25px !important;
+
+      color: var(--blue-dark) !important;
+
+      line-height: 1.4 !important;
+
+      margin-bottom: 20px !important;
+    }
+
+    .letter-paper strong {
+      color: #489ac7;
+      font-weight: 700;
+    }
+
+    .signature {
+      margin-top: 20px;
+
+      text-align: right;
+
+      font-family: "Fredoka", sans-serif;
+
+      font-size: 19px;
+
+      color: var(--blue-dark);
+    }
+
+    /* =========================
+       FINAL SCREEN
+       ========================= */
+
+    .final-character {
+      margin-bottom: 10px;
+    }
+
+    .final-character .character-wrap {
+      margin-bottom: 5px;
+    }
+
+    .final-title {
+      margin-top: 5px;
+    }
+
+    .small-note {
+      margin-top: 20px;
+
+      font-size: 12px;
+
+      color: #9aadb7;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 600px) {
+
+      .app {
+        padding: 14px;
+      }
+
+      .card {
+        padding: 31px 20px;
+        border-radius: 25px;
+      }
+
+      .character-wrap {
+        width: 170px;
+        height: 170px;
+      }
+
+      .bubbles {
+        width: 160px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .letter-paper {
+        padding: 22px 18px;
+      }
+
+      .letter-paper p {
+        font-size: 14px;
+        line-height: 1.9;
+      }
+
+      .letter-opening {
+        font-size: 23px !important;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       BACKGROUND
+       ========================= -->
+
+  <div class="background">
+
+    <div class="cloud one"></div>
+
+    <div class="cloud two"></div>
+
+  </div>
+
+
+  <!-- =========================
+       MAIN
+       ========================= -->
+
+  <main class="app">
+
+
+    <!-- =====================================================
+         SCREEN 1
+         ===================================================== -->
+
+    <section class="screen active" id="screen1">
+
+      <div class="card">
+
+        <div class="content">
+
+          <div class="character-wrap">
+
+            <img
+              src="images/bubbles.png"
+              alt="Bubbles"
+              class="bubbles"
+            />
+
+          </div>
+
+
+          <div class="tiny">
+            a tiny surprise
+          </div>
+
+
+          <h1>
+            Hey, Birthday Girl ♡
+          </h1>
+
+
+          <p class="subtitle">
+            I made this for you.
+            <br>
+            Just open it. :)
+          </p>
+
+
+          <div class="decor">
+            ✦ ♡ ✦
+          </div>
+
+
+          <div class="button-row">
+
+            <button
+              class="btn"
+              onclick="nextScreen(2)"
+            >
+              Open it ♡
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SCREEN 2
+         ===================================================== -->
+
+    <section class="screen" id="screen2">
+
+      <div class="card">
+
+        <div class="content">
+
+          <div class="tiny">
+            it's your birthday!!
+          </div>
+
+
+          <div class="cake-area">
+
+            <div class="candle one">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle two">
+              <div class="flame"></div>
+            </div>
+
+            <div class="candle three">
+              <div class="flame"></div>
+            </div>
+
+            <div class="cake"></div>
+
+            <div class="plate"></div>
+
+          </div>
+
+
+          <h1>
+            Happy Birthday! 🎂
+          </h1>
+
+
+          <p class="subtitle">
+            Hope u have a really really good day. ❤️
+            <br><br>
+            Now go eat some cake.
+          </p>
+
+
+          <div class="decor">
+            ˚₊‧ ♡ ‧₊˚
+          </div>
+
+
+          <div class="button-row">
+
+            <button
+              class="btn"
+              onclick="nextScreen(3)"
+            >
+              okay, one more thing 💌
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SCREEN 3 — YOUR LETTER
+         ===================================================== -->
+
+    <section class="screen" id="screen3">
+
+      <div class="card">
+
+        <div class="content">
+
+          <div class="tiny">
+            okay, i wrote something 😭
+          </div>
+
+
+          <div class="letter-paper">
+
+            <p class="letter-opening">
+              Happy birthday bhondu ❤️
+            </p>
+
+
+            <p>
+              I am not good with letters,
+              u already know that. My handwriting
+              is hard to read anyway, so lets keep
+              it digital 
+            </p>
+
+
+            <p>
+              Do u remember once u accidentally
+              drove ur cycle on a squirrel and cried
+              so much? 😭
+              Ik it's not a day to bring that up,
+              but this is who u are —
+              <strong>soft, emo, cutu.</strong>
+              Don't let anyone destroy that.
+            </p>
+
+
+            <p>
+              Always be yourself.
+              This is one of the qualities I've
+              always liked about u.
+            </p>
+
+
+            <p>
+              One more thing...
+              aaaaaaa why am I making this so long 😭
+            </p>
+
+
+            <p>
+              U are such a hardworker.
+              I have always envied u for that.
+              I really hope whatever u have
+              always dreamed of comes true.
+            </p>
+
+
+            <p>
+              Bye, tc ❤️
+            </p>
+
+
+            <p>
+              Aur mai kaalu nahi hu 
+            </p>
+
+          </div>
+
+
+          <div class="decor">
+            ✿ ♡ ✿
+          </div>
+
+
+          <div class="button-row">
+
+            <button
+              class="btn"
+              onclick="nextScreen(4)"
+            >
+              okay bye 😭
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SCREEN 4
+         ===================================================== -->
+
+    <section class="screen" id="screen4">
+
+      <div class="card">
+
+        <div class="content final-character">
+
+          <div class="character-wrap">
+
+            <img
+              src="images/bubbles.png"
+              alt="Bubbles"
+              class="bubbles"
+            />
+
+          </div>
+
+
+          <div class="tiny">
+            okay that's actually it
+          </div>
+
+
+          <h2 class="final-title">
+            Happy Birthday ❤️
+          </h2>
+
+
+          <p class="subtitle">
+            Stay the same cutu.
+            <br><br>
+            And yes, this was unnecessarily
+            long for a birthday wish 
+          </p>
+
+
+          <div class="decor">
+            ✦ ✿ ♡ ✿ ✦
+          </div>
+
+
+          
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    /* =========================
+       SCREEN SWITCHING
+       ========================= */
+
+    function nextScreen(number) {
+
+      const screens =
+        document.querySelectorAll(".screen");
+
+      screens.forEach(screen => {
+        screen.classList.remove("active");
+      });
+
+      const next =
+        document.getElementById("screen" + number);
+
+      next.classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+      createBurst();
+    }
+
+
+    /* =========================
+       FLOATING DECORATIONS
+       ========================= */
+
+    const decorations = [
+      "♡",
+      "✦",
+      "✿",
+      "˚",
+      "⋆"
+    ];
+
+
+    function createFloatItem() {
+
+      const item =
+        document.createElement("div");
+
+      item.className = "float-item";
+
+      item.textContent =
+        decorations[
+          Math.floor(
+            Math.random() *
+            decorations.length
+          )
+        ];
+
+
+      item.style.left =
+        Math.random() * 100 + "vw";
+
+
+      item.style.fontSize =
+        (13 + Math.random() * 16) + "px";
+
+
+      item.style.animationDuration =
+        (6 + Math.random() * 6) + "s";
+
+
+      document.body.appendChild(item);
+
+
+      setTimeout(() => {
+        item.remove();
+      }, 13000);
+    }
+
+
+    /* =========================
+       BURST
+       ========================= */
+
+    function createBurst() {
+
+      for (let i = 0; i < 16; i++) {
+
+        setTimeout(() => {
+          createFloatItem();
+        }, i * 100);
+
+      }
+
+    }
+
+
+    /* =========================
+       BACKGROUND ANIMATION
+       ========================= */
+
+    setInterval(() => {
+
+      createFloatItem();
+
+    }, 1500);
+
+  </script>
+
+</body>
+</html>
